@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour {
 
-    public float Energy, DefaultEnergy, DecrementValue;
+    public float Energy, DefaultEnergy, DecrementValue, moveStat;
 
     private PlayerAIMovement _playerAIMovement;
 
     void Awake() {
         Energy = DefaultEnergy;
         _playerAIMovement = this.GetComponent<PlayerAIMovement>();
+		moveStat = 100;
     }
 
     public void Eat() {
