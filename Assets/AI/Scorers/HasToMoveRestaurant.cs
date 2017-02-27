@@ -2,7 +2,7 @@
 using Apex.AI;
 using Apex.Serialization;
 
-public sealed class HasToMove : ContextualScorerBase {
+public sealed class HasToMoveRestaurant : ContextualScorerBase {
 	[ApexSerialization(defaultValue = false)]
 	public bool not = false;
 
@@ -12,7 +12,7 @@ public sealed class HasToMove : ContextualScorerBase {
 	public override float Score(IAIContext context) {
 		var c = (PlayerContext)context;
 
-		if (c.self.GetComponent<PlayerStats>().moveStat < threshold) {
+		if (c.self.GetComponent<PlayerStats>().Energy < threshold) {
 			if (not) {
 				return 0f;
 			}

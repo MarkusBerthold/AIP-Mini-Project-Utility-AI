@@ -3,6 +3,8 @@ using Apex.AI;
 using Apex.Serialization;
 
 public sealed class EnergyBelowThreshold : ContextualScorerBase {
+
+
     [ApexSerialization(defaultValue = false)]
     public bool not = false;
 
@@ -12,7 +14,8 @@ public sealed class EnergyBelowThreshold : ContextualScorerBase {
     public override float Score(IAIContext context) {
         var c = (PlayerContext)context;
 
-        if (c.self.GetComponent<PlayerStats>().Energy < threshold) {
+
+		if (c.self.GetComponent<PlayerStats>().Energy < threshold && c.self.GetComponent<PlayerStats>().isInRestaurant) {
             if (not) {
                 return 0f;
             }

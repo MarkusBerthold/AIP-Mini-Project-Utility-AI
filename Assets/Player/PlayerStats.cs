@@ -8,6 +8,8 @@ public class PlayerStats : MonoBehaviour {
 
     private PlayerAIMovement _playerAIMovement;
 
+	public bool isInRestaurant;
+
     void Awake() {
         Energy = DefaultEnergy;
         _playerAIMovement = this.GetComponent<PlayerAIMovement>();

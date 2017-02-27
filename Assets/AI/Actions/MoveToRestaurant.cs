@@ -1,9 +1,9 @@
 ﻿using Apex.AI;
 using UnityEngine;
 
-public sealed class MoveToHotel : ActionBase {
+public sealed class MoveToRestaurant : ActionBase {
 
-	public Vector3 hotelDest = new Vector3 (39.2f, 5f, -17.4f);
+	public Vector3 hotelDest = new Vector3 (17, 0, 11);
 
 	public override void Execute(IAIContext context) {
 		// Cast the provided context to your concrete context type
