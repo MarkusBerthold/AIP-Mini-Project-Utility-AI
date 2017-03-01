@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour {
 
     private PlayerAIMovement _playerAIMovement;
 
-	public bool isInRestaurant;
+	public bool isInRestaurant,isInRefreshments, isInHotel, isInToilet;
 
     void Awake() {
         Energy = DefaultEnergy;

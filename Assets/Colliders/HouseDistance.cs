@@ -20,20 +20,20 @@ public class HouseDistance: MonoBehaviour {
 			if(this.name == "Restaurant")
 				player.GetComponent<PlayerStats> ().isInRestaurant = true;
 			else if (this.name == "Toilet")
-				player.GetComponent<PlayerStats> ().isInRestaurant = true;
+				player.GetComponent<PlayerStats> ().isInToilet = true;
 			else if (this.name == "Hotel")
-				player.GetComponent<PlayerStats> ().isInRestaurant = true;
+				player.GetComponent<PlayerStats> ().isInHotel = true;
 			else if (this.name == "Refreshments")
-				player.GetComponent<PlayerStats> ().isInRestaurant = true;
+				player.GetComponent<PlayerStats> ().isInRefreshments = true;
 		} else if (Vector3.Distance (playerpos, housepos) > 10) {
 			if(this.name == "Restaurant")
 				player.GetComponent<PlayerStats> ().isInRestaurant = false;
 			else if (this.name == "Toilet")
-				player.GetComponent<PlayerStats> ().isInRestaurant = false;
+				player.GetComponent<PlayerStats> ().isInToilet = false;
 			else if (this.name == "Hotel")
-				player.GetComponent<PlayerStats> ().isInRestaurant = false;
+				player.GetComponent<PlayerStats> ().isInHotel = false;
 			else if (this.name == "Refreshments")
-				player.GetComponent<PlayerStats> ().isInRestaurant = false;
+				player.GetComponent<PlayerStats> ().isInRefreshments = false;
 		}
 	}
 }
