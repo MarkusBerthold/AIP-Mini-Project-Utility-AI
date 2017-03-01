@@ -8,15 +8,12 @@ public class RestaurantCollider : MonoBehaviour {
 	void OnTriggerEnter(Collider c){
 		if(c.name == "Player1"){
 			c.GetComponent<PlayerStats> ().isInRestaurant = true;
-			print ("entered");
-		}
-		
+		}		
 	}
 
 	void OnTriggerExit(Collider c){
 		if(c.name == "Player1"){
 			c.GetComponent<PlayerStats> ().isInRestaurant = false;
-			print ("exit");
 		}
 	}
 }
