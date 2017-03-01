@@ -50,9 +50,9 @@ public class PlayerStats : MonoBehaviour {
 
     public void Idle() {
         Energy -= DecrementValueEnergy;
-        Tiredness += DecrementValueTiredness;
-        Thirst += DecrementValueThirst;
-        Bladder += DecrementValueBladder;
+        Tiredness -= DecrementValueTiredness;
+        Thirst -= DecrementValueThirst;
+        Bladder -= DecrementValueBladder;
 
     }
 

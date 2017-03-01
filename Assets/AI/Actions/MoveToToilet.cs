@@ -3,7 +3,7 @@ using UnityEngine;
 
 public sealed class MoveToToilet : ActionBase {
 
-	public Vector3 toiletDest = new Vector3 (-10, 1, -10);
+	public Vector3 toiletDest = new Vector3 (-10, 0f, -10);
 
 	public override void Execute(IAIContext context) {
 		// Cast the provided context to your concrete context type
