@@ -1,7 +1,7 @@
 ﻿using Apex.AI;
 using UnityEngine;
 
-public sealed class MoveToRestaurant : ActionBase {
+public sealed class MoveToRefreshments : ActionBase {
 
 	public Vector3 hotelDest = new Vector3 (17, 0, 11);
 
