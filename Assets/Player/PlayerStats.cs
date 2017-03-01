@@ -16,11 +16,11 @@ public class PlayerStats : MonoBehaviour {
     public float Tiredness;
     public float DefaultTiredness, DecrementValueTiredness;
     
-    public float moveStat;
 
     private PlayerAIMovement _playerAIMovement;
 
-	public bool isInRestaurant,isInRefreshments, isInHotel, isInToilet;
+	public bool isInRestaurant,isInRefreshments, isInHotel, isInToilet,
+	player2InRestaurant, player2InRefreshments, player2InHotel, player2InToilet;
 
     void Awake() {
         Energy = DefaultEnergy;
@@ -29,7 +29,6 @@ public class PlayerStats : MonoBehaviour {
         Tiredness = DefaultTiredness;
 
         _playerAIMovement = this.GetComponent<PlayerAIMovement>();
-		moveStat = 100;
     }
 
     public void Eat() {

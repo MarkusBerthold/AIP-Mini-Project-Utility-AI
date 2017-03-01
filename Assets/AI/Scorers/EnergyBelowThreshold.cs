@@ -9,7 +9,7 @@ public sealed class EnergyBelowThreshold : ContextualScorerBase {
     public bool not = false;
 
     [ApexSerialization(defaultValue = 30f)]
-    public float threshold = 30f;
+	public float threshold = 30f;
 
     public override float Score(IAIContext context) {
         var c = (PlayerContext)context;
