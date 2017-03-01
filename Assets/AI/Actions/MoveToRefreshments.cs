@@ -1,9 +1,9 @@
 ﻿using Apex.AI;
 using UnityEngine;
 
-public sealed class MoveToToilet : ActionBase {
+public sealed class MoveToRestaurant : ActionBase {
 
-	public Vector3 toiletDest = new Vector3 (-10, 1, -10);
+	public Vector3 hotelDest = new Vector3 (17, 0, 11);
 
 	public override void Execute(IAIContext context) {
 		// Cast the provided context to your concrete context type
@@ -11,7 +11,7 @@ public sealed class MoveToToilet : ActionBase {
 
 		var player = c.self;
 
-		player.GetComponent<PlayerStats>().MoveTo(toiletDest);
+		player.GetComponent<PlayerStats>().MoveTo(hotelDest);
 
 
 	}
