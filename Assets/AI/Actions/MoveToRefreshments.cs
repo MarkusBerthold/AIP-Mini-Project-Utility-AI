@@ -3,7 +3,7 @@ using UnityEngine;
 
 public sealed class MoveToRefreshments : ActionBase {
 
-	public Vector3 hotelDest = new Vector3 (17, 0, 11);
+	public Vector3 refreshmentsDest = new Vector3 (-26, 1, 25);
 
 	public override void Execute(IAIContext context) {
 		// Cast the provided context to your concrete context type
@@ -11,7 +11,7 @@ public sealed class MoveToRefreshments : ActionBase {
 
 		var player = c.self;
 
-		player.GetComponent<PlayerStats>().MoveTo(hotelDest);
+		player.GetComponent<PlayerStats>().MoveTo(refreshmentsDest);
 
 
 	}
