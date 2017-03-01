@@ -12,7 +12,7 @@ public sealed class HasToMoveRestaurant : ContextualScorerBase {
 	public override float Score(IAIContext context) {
 		var c = (PlayerContext)context;
 
-		if (c.self.GetComponent<PlayerStats>().Energy < threshold) {
+		if (c.self.GetComponent<PlayerStats>().Energy < threshold && !c.self.GetComponent<PlayerStats>().player2InRestaurant) {
 			if (not) {
 				return 0f;
 			}

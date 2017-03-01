@@ -12,7 +12,7 @@ public sealed class HasToMoveRefreshments : ContextualScorerBase {
 	public override float Score(IAIContext context) {
 		var c = (PlayerContext)context;
 
-		if (c.self.GetComponent<PlayerStats>().Thirst < threshold) {
+		if (c.self.GetComponent<PlayerStats>().Thirst < threshold && !c.self.GetComponent<PlayerStats>().player2InRefreshments) {
 			if (not) {
 				return 0f;
 			}

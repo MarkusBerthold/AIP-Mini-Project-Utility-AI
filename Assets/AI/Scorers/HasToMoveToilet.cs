@@ -12,7 +12,7 @@ public sealed class HasToMoveToilet : ContextualScorerBase {
 	public override float Score(IAIContext context) {
 		var c = (PlayerContext)context;
 
-		if (c.self.GetComponent<PlayerStats>().Bladder < threshold) {
+		if (c.self.GetComponent<PlayerStats>().Bladder < threshold  && !c.self.GetComponent<PlayerStats>().player2InToilet) {
 			if (not) {
 				return 0f;
 			}

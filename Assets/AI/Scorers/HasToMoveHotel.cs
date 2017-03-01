@@ -12,7 +12,7 @@ public sealed class HasToMoveHotel : ContextualScorerBase {
 	public override float Score(IAIContext context) {
 		var c = (PlayerContext)context;
 
-		if (c.self.GetComponent<PlayerStats>().Tiredness < threshold) {
+		if (c.self.GetComponent<PlayerStats>().Tiredness < threshold && !c.self.GetComponent<PlayerStats>().player2InHotel) {
 			if (not) {
 				return 0f;
 			}
