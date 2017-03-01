@@ -4,7 +4,19 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour {
 
-    public float Energy, DefaultEnergy, DecrementValue, moveStat;
+    public float Energy;
+    public float DefaultEnergy, DecrementValueEnergy;
+
+    public float Thirst;
+    public float DefaultThirst, DecrementValueThirst;
+
+    public float Bladder;
+    public float DefaultBladder, DecrementValueBladder;
+
+    public float Tiredness;
+    public float DefaultTiredness, DecrementValueTiredness;
+    
+    public float moveStat;
 
     private PlayerAIMovement _playerAIMovement;
 
@@ -12,6 +24,10 @@ public class PlayerStats : MonoBehaviour {
 
     void Awake() {
         Energy = DefaultEnergy;
+        Thirst = DefaultThirst;
+        Bladder = DefaultBladder;
+        Tiredness = DefaultTiredness;
+
         _playerAIMovement = this.GetComponent<PlayerAIMovement>();
 		moveStat = 100;
     }
@@ -20,8 +36,24 @@ public class PlayerStats : MonoBehaviour {
         Energy = DefaultEnergy;
     }
 
+    public void Sleep() {
+        Tiredness = DefaultTiredness;
+    }
+
+    public void Drink() {
+        Thirst = DefaultThirst;
+    }
+
+    public void Pee() {
+        Bladder = DefaultBladder;
+    }
+
     public void Idle() {
-        Energy -= DecrementValue;
+        Energy -= DecrementValueEnergy;
+        Tiredness += DecrementValueTiredness;
+        Thirst += DecrementValueThirst;
+        Bladder += DecrementValueBladder;
+
     }
 
     public void MoveTo(Vector3 destination) {
