@@ -31,6 +31,23 @@ public class PlayerStats : MonoBehaviour {
         _playerAIMovement = this.GetComponent<PlayerAIMovement>();
     }
 
+    void Update() {
+        if (player2InHotel) {
+            GameObject.Find("Hotel").GetComponent<Renderer>().material.color = Color.red;
+        } else if (player2InToilet) {
+            GameObject.Find("Toilet").GetComponent<Renderer>().material.color = Color.red;
+        } else if (player2InRestaurant) {
+            GameObject.Find("Restaurant").GetComponent<Renderer>().material.color = Color.red;
+        } else if (player2InRefreshments) {
+            GameObject.Find("Refreshments").GetComponent<Renderer>().material.color = Color.red;
+        } else {
+            GameObject.Find("Hotel").GetComponent<Renderer>().material.color = Color.white;
+            GameObject.Find("Toilet").GetComponent<Renderer>().material.color = Color.white;
+            GameObject.Find("Restaurant").GetComponent<Renderer>().material.color = Color.white;
+            GameObject.Find("Refreshments").GetComponent<Renderer>().material.color = Color.white;
+        }
+    }
+
     public void Eat() {
         Energy = DefaultEnergy;
     }
