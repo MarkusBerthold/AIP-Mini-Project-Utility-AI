@@ -14,6 +14,10 @@ public class Progress : MonoBehaviour {
         GUI.Box(new Rect(25, 50, 20, -Thirst), "");
         GUI.Box(new Rect(50, 50, 20, -Bladder), "");
         GUI.Box(new Rect(75, 50, 20, -Tiredness), "");
+        
+        GUI.EndGroup();
+        GUI.BeginGroup(new Rect(20, 70, 200, 200));
+        GUI.Label(new Rect(0, 0, 100, 100), "R     D     T     H");
         GUI.EndGroup();
     }
 
