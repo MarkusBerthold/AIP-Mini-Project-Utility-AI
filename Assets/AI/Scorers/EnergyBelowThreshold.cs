@@ -20,11 +20,11 @@ public sealed class EnergyBelowThreshold : ContextualScorerBase {
                 return 0f;
             }
 
-            return this.score;
+			return this.score/(1-(c.self.GetComponent<PlayerStats>().Energy/100));
         }
 
         if (not) {
-            return this.score;
+			return this.score/(1-(c.self.GetComponent<PlayerStats>().Energy/100));
         }
 
         return 0f;

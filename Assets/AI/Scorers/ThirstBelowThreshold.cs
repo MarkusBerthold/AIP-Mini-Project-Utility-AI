@@ -20,11 +20,11 @@ public sealed class ThirstBelowThreshold : ContextualScorerBase {
                 return 0f;
             }
 
-            return this.score;
+			return this.score/(1-(c.self.GetComponent<PlayerStats>().Thirst/100));
         }
 
         if (not) {
-            return this.score;
+			return this.score/(1-(c.self.GetComponent<PlayerStats>().Thirst/100));
         }
 
         return 0f;

@@ -35,7 +35,7 @@ public class Player2 : MonoBehaviour {
 
 		MoveTo (positions[Random.Range(0,4)]);
 
-		yield return new WaitForSeconds(Random.Range(6,16)); // waits random seconds betweel 6 and 15
+		yield return new WaitForSeconds(Random.Range(3,8)); // waits random seconds betweel 6 and 15
 		}
 	}
 }

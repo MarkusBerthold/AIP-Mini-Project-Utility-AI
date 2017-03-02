@@ -17,11 +17,11 @@ public sealed class HasToMoveHotel : ContextualScorerBase {
 				return 0f;
 			}
 
-			return this.score;
+			return this.score/(1-(c.self.GetComponent<PlayerStats>().Tiredness/100));
 		}
 
 		if (not) {
-			return this.score;
+			return this.score/(1-(c.self.GetComponent<PlayerStats>().Tiredness/100));
 		}
 
 		return 0f;
