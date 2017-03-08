@@ -17,11 +17,11 @@ public sealed class HasToMoveToilet : ContextualScorerBase {
 				return 0f;
 			}
 
-			return this.score/(1-(c.self.GetComponent<PlayerStats>().Bladder/100));
+			return this.score - c.self.GetComponent<PlayerStats> ().Bladder;
 		}
 
 		if (not) {
-			return this.score/(1-(c.self.GetComponent<PlayerStats>().Bladder/100));
+			return this.score - c.self.GetComponent<PlayerStats> ().Bladder;
 		}
 
 		return 0f;

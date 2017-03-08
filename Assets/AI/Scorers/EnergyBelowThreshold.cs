@@ -15,18 +15,19 @@ public sealed class EnergyBelowThreshold : ContextualScorerBase {
         var c = (PlayerContext)context;
 
 
-		if (c.self.GetComponent<PlayerStats>().Energy < threshold && c.self.GetComponent<PlayerStats>().isInRestaurant) {
-            if (not) {
-                return 0f;
-            }
+		if (c.self.GetComponent<PlayerStats> ().Energy < threshold && c.self.GetComponent<PlayerStats> ().isInRestaurant) {
+			if (not) {
+				return 0f;
+			}
 
-			return this.score/(1-(c.self.GetComponent<PlayerStats>().Energy/100));
-        }
+			return this.score - c.self.GetComponent<PlayerStats> ().Energy;
+		}
 
         if (not) {
-			return this.score/(1-(c.self.GetComponent<PlayerStats>().Energy/100));
+				return this.score - c.self.GetComponent<PlayerStats>().Energy;
         }
 
         return 0f;
-    }
+    	
+	}
 }

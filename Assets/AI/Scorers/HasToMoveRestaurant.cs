@@ -17,11 +17,11 @@ public sealed class HasToMoveRestaurant : ContextualScorerBase {
 				return 0f;
 			}
 
-			return this.score/(1-(c.self.GetComponent<PlayerStats>().Energy/100));
+			return this.score - c.self.GetComponent<PlayerStats> ().Energy;
 		}
 
 		if (not) {
-			return this.score/(1-(c.self.GetComponent<PlayerStats>().Energy/100));
+			return this.score - c.self.GetComponent<PlayerStats> ().Energy;
 		}
 
 		return 0f;

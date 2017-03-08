@@ -17,11 +17,11 @@ public sealed class HasToMoveRefreshments : ContextualScorerBase {
 				return 0f;
 			}
 
-			return this.score/(1-(c.self.GetComponent<PlayerStats>().Thirst/100));
+			return this.score - c.self.GetComponent<PlayerStats> ().Thirst;
 		}
 
 		if (not) {
-			return this.score/(1-(c.self.GetComponent<PlayerStats>().Thirst/100));
+			return this.score - c.self.GetComponent<PlayerStats> ().Thirst;
 		}
 
 		return 0f;
